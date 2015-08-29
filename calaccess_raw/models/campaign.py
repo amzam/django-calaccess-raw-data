@@ -3539,7 +3539,8 @@ Part R: late payments received from')
     )
     bal_num = fields.CharField(max_length=7, db_column='BAL_NUM', blank=True)
     bal_juris = fields.CharField(
-        max_length=40, db_column='BAL_JURIS', blank=True
+        max_length=40, db_column='BAL_JURIS', blank=True,
+        help_text='Jurisdiction of ballot measure', 
     )
     sup_opp_cd = fields.CharField(
         max_length=1, db_column='SUP_OPP_CD', blank=True
