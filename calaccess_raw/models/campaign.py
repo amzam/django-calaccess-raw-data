@@ -3358,7 +3358,7 @@ original filing and 1 to 999 amendments.",
     juris_dscr = fields.CharField(
         db_column='JURIS_DSCR', max_length=14, blank=True
     )
-    dist_no = fields.CharField(db_column='DIST_NO', max_length=4, blank=True, help_text="District number for office being sought. Populated for Senate, Assembly or Board of Equialization races.")
+    dist_no = fields.CharField(db_column='DIST_NO', max_length=4, blank=True)
     party = fields.CharField(db_column='PARTY', max_length=20, blank=True)
     yr_of_elec = fields.IntegerField(
         db_column='YR_OF_ELEC',
@@ -3548,11 +3548,13 @@ Part R: late payments received from')
         max_digits=16, decimal_places=2, db_column='AMT_ATTRIB'
     )
     memo_code = fields.CharField(
-        max_length=1, db_column='MEMO_CODE', blank=True
+        max_length=1, db_column='MEMO_CODE', blank=True,
+           help_text="Memo amount flag")
+
     )
     memo_refno = fields.CharField(
         max_length=20, db_column='MEMO_REFNO', blank=True,
-        help_text="Memo amount flag")
+        help_text="Reference to text contained in a TEXT record")
     )
     employer = fields.CharField(
         max_length=200, db_column='EMPLOYER', blank=True,
